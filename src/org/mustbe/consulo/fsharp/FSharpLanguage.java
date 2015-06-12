@@ -14,15 +14,20 @@
  * limitations under the License.
  */
 
-package org.mustbe.consulo.fsharp.module.extension;
+package org.mustbe.consulo.fsharp;
 
-import org.consulo.module.extension.ModuleExtension;
-import org.mustbe.consulo.dotnet.module.extension.DotNetModuleLangExtension;
+import com.intellij.lang.Language;
 
 /**
  * @author VISTALL
  * @since 12.06.2015
  */
-public interface FSharpModuleExtension<T extends FSharpModuleExtension<T>> extends ModuleExtension<T>, DotNetModuleLangExtension<T>
+public class FSharpLanguage extends Language
 {
+	public static final FSharpLanguage INSTANCE = new FSharpLanguage();
+
+	public FSharpLanguage()
+	{
+		super("F#");
+	}
 }

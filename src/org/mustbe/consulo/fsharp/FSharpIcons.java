@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-package org.mustbe.consulo.fsharp.module.extension;
+package org.mustbe.consulo.fsharp;
 
-import org.consulo.module.extension.ModuleExtension;
-import org.mustbe.consulo.dotnet.module.extension.DotNetModuleLangExtension;
+import javax.swing.Icon;
 
-/**
- * @author VISTALL
- * @since 12.06.2015
- */
-public interface FSharpModuleExtension<T extends FSharpModuleExtension<T>> extends ModuleExtension<T>, DotNetModuleLangExtension<T>
+import com.intellij.openapi.util.IconLoader;
+
+// Generated Consulo DevKit plugin 
+public interface FSharpIcons
 {
+	Icon Fsharp = IconLoader.getIcon("/icons/fsharp.png");  // 16x16
 }

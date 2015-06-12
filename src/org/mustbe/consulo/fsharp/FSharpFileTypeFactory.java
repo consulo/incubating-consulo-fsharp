@@ -14,15 +14,21 @@
  * limitations under the License.
  */
 
-package org.mustbe.consulo.fsharp.module.extension;
+package org.mustbe.consulo.fsharp;
 
-import org.consulo.module.extension.ModuleExtension;
-import org.mustbe.consulo.dotnet.module.extension.DotNetModuleLangExtension;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.fileTypes.FileTypeConsumer;
+import com.intellij.openapi.fileTypes.FileTypeFactory;
 
 /**
  * @author VISTALL
  * @since 12.06.2015
  */
-public interface FSharpModuleExtension<T extends FSharpModuleExtension<T>> extends ModuleExtension<T>, DotNetModuleLangExtension<T>
+public class FSharpFileTypeFactory extends FileTypeFactory
 {
+	@Override
+	public void createFileTypes(@NotNull FileTypeConsumer consumer)
+	{
+		consumer.consume(FSharpFileType.INSTANCE);
+	}
 }

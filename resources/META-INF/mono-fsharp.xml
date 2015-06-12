@@ -15,15 +15,12 @@
   -->
 
 <idea-plugin>
-	<id>org.mustbe.consulo.fsharp</id>
-	<name>F#</name>
-	<depends>org.mustbe.consulo.dotnet.core</depends>
-	<depends>org.mustbe.consulo.dotnet.core</depends>
-	<depends config-file="mono-fsharp.xml" optional="true">org.mustbe.consulo.dotnet.mono</depends>
-
 	<extensions defaultExtensionNs="com.intellij">
-		<errorHandler implementation="com.intellij.diagnostic.ITNReporter" />
-
-		<fileTypeFactory implementation="org.mustbe.consulo.fsharp.FSharpFileTypeFactory" />
+		<moduleExtensionProvider key="mono-fsharp"
+								 parentKey="mono-dotnet"
+								 name="F#"
+								 icon="/icons/fsharp.png"
+								 immutableClass="org.mustbe.consulo.fsharp.module.extension.MonoFSharpModuleExtension"
+								 mutableClass="org.mustbe.consulo.fsharp.module.extension.MonoFSharpMutableModuleExtension"/>
 	</extensions>
 </idea-plugin>
