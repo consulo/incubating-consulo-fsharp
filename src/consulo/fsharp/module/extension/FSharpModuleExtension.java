@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2015 must-be.org
+ * Copyright 2013-2016 consulo.io
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,15 @@
  * limitations under the License.
  */
 
-package org.mustbe.consulo.fsharp;
+package consulo.fsharp.module.extension;
 
-import javax.swing.Icon;
+import consulo.dotnet.module.extension.DotNetModuleLangExtension;
+import consulo.module.extension.ModuleExtension;
 
-import com.intellij.openapi.util.IconLoader;
-
-// Generated Consulo DevKit plugin 
-public interface FSharpIcons
+/**
+ * @author VISTALL
+ * @since 12.06.2015
+ */
+public interface FSharpModuleExtension<T extends FSharpModuleExtension<T>> extends ModuleExtension<T>, DotNetModuleLangExtension<T>
 {
-	Icon Fsharp = IconLoader.getIcon("/icons/fsharp.png");  // 16x16
 }

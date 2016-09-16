@@ -1,5 +1,5 @@
 <!--
-  - Copyright 2013-2015 must-be.org
+  - Copyright 2013-2016 consulo.io
   -
   - Licensed under the Apache License, Version 2.0 (the "License");
   - you may not use this file except in compliance with the License.
@@ -20,7 +20,7 @@
 								 parentKey="mono-dotnet"
 								 name="F#"
 								 icon="/icons/fsharp.png"
-								 immutableClass="org.mustbe.consulo.fsharp.module.extension.MonoFSharpModuleExtension"
-								 mutableClass="org.mustbe.consulo.fsharp.module.extension.MonoFSharpMutableModuleExtension"/>
+								 immutableClass="consulo.fsharp.module.extension.MonoFSharpModuleExtension"
+								 mutableClass="consulo.fsharp.module.extension.MonoFSharpMutableModuleExtension"/>
 	</extensions>
 </idea-plugin>

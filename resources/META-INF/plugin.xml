@@ -1,5 +1,5 @@
 <!--
-  - Copyright 2013-2015 must-be.org
+  - Copyright 2013-2016 consulo.io
   -
   - Licensed under the Apache License, Version 2.0 (the "License");
   - you may not use this file except in compliance with the License.
@@ -18,9 +18,9 @@
 	<id>consulo.fsharp</id>
 	<name>F#</name>
 	<depends>consulo.dotnet</depends>
-	<depends config-file="mono-fsharp.xml" optional="true">consulo.dotnet.mono</depends>
+	<depends config-file="consulo.dotnet.mono.xml" optional="true">consulo.dotnet.mono</depends>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<fileTypeFactory implementation="org.mustbe.consulo.fsharp.FSharpFileTypeFactory" />
+		<fileTypeFactory implementation="consulo.fsharp.FSharpFileTypeFactory" />
 	</extensions>
 </idea-plugin>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2015 must-be.org
+ * Copyright 2013-2016 consulo.io
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-package org.mustbe.consulo.fsharp;
+package consulo.fsharp;
 
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.fileTypes.FileTypeConsumer;
-import com.intellij.openapi.fileTypes.FileTypeFactory;
+import com.intellij.lang.Language;
 
 /**
  * @author VISTALL
  * @since 12.06.2015
  */
-public class FSharpFileTypeFactory extends FileTypeFactory
+public class FSharpLanguage extends Language
 {
-	@Override
-	public void createFileTypes(@NotNull FileTypeConsumer consumer)
+	public static final FSharpLanguage INSTANCE = new FSharpLanguage();
+
+	public FSharpLanguage()
 	{
-		consumer.consume(FSharpFileType.INSTANCE);
+		super("F#");
 	}
 }
