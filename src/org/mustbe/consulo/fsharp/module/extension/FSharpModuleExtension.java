@@ -16,8 +16,8 @@
 
 package org.mustbe.consulo.fsharp.module.extension;
 
-import org.consulo.module.extension.ModuleExtension;
-import org.mustbe.consulo.dotnet.module.extension.DotNetModuleLangExtension;
+import consulo.dotnet.module.extension.DotNetModuleLangExtension;
+import consulo.module.extension.ModuleExtension;
 
 /**
  * @author VISTALL

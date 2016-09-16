@@ -18,21 +18,21 @@ package org.mustbe.consulo.fsharp.module.extension;
 
 import java.io.IOException;
 
-import org.consulo.module.extension.impl.ModuleExtensionImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.mustbe.consulo.RequiredReadAction;
-import org.mustbe.consulo.dotnet.compiler.DotNetCompileFailedException;
-import org.mustbe.consulo.dotnet.compiler.DotNetCompilerMessage;
-import org.mustbe.consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
-import org.mustbe.consulo.dotnet.module.extension.DotNetModuleExtension;
 import org.mustbe.consulo.fsharp.FSharpFileType;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.ModuleRootLayer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiElement;
+import consulo.annotations.RequiredReadAction;
+import consulo.dotnet.compiler.DotNetCompileFailedException;
+import consulo.dotnet.compiler.DotNetCompilerMessage;
+import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
+import consulo.dotnet.module.extension.DotNetModuleExtension;
+import consulo.extension.impl.ModuleExtensionImpl;
+import consulo.roots.ModuleRootLayer;
 
 /**
  * @author VISTALL
