@@ -1,1 +1,1 @@
-![Build Status](http://must-be.org/vulcan/statusImage?name=_consulo-fsharp)
+[![Build Status](http://must-be.org/jenkins/job/consulo-fsharp/badge/icon)](http://must-be.org/jenkins/job/consulo-fsharp/)
