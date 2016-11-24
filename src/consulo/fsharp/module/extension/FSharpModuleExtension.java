@@ -16,7 +16,13 @@
 
 package consulo.fsharp.module.extension;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import com.intellij.openapi.fileTypes.LanguageFileType;
+import com.intellij.psi.PsiElement;
+import consulo.annotations.RequiredReadAction;
 import consulo.dotnet.module.extension.DotNetModuleLangExtension;
+import consulo.fsharp.FSharpFileType;
 import consulo.module.extension.ModuleExtension;
 
 /**
@@ -25,4 +31,26 @@ import consulo.module.extension.ModuleExtension;
  */
 public interface FSharpModuleExtension<T extends FSharpModuleExtension<T>> extends ModuleExtension<T>, DotNetModuleLangExtension<T>
 {
+	@RequiredReadAction
+	@NotNull
+	@Override
+	default PsiElement[] getEntryPointElements()
+	{
+		return PsiElement.EMPTY_ARRAY; //TODO [VISTALL] resolve main methods
+	}
+
+	@RequiredReadAction
+	@Nullable
+	@Override
+	default String getAssemblyTitle()
+	{
+		return null; //TODO [VISTALL] resolve from AssemblyInfo.fs
+	}
+
+	@NotNull
+	@Override
+	default LanguageFileType getFileType()
+	{
+		return FSharpFileType.INSTANCE;
+	}
 }

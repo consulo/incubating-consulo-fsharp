@@ -22,5 +22,7 @@
 
 	<extensions defaultExtensionNs="com.intellij">
 		<fileTypeFactory implementation="consulo.fsharp.FSharpFileTypeFactory" />
+
+		<lang.parserDefinition language="F#" implementationClass="consulo.fsharp.lang.FSharpParserDefinition" />
 	</extensions>
 </idea-plugin>

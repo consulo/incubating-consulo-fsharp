@@ -14,26 +14,21 @@
  * limitations under the License.
  */
 
-package consulo.fsharp;
+package consulo.fsharp.lang.psi;
 
-import com.intellij.lang.Language;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.extapi.psi.PsiFileBase;
+import com.intellij.psi.FileViewProvider;
+import consulo.fsharp.FSharpLanguage;
 
 /**
  * @author VISTALL
- * @since 12.06.2015
+ * @since 23-Nov-16.
  */
-public class FSharpLanguage extends Language
+public class FSharpFileImpl extends PsiFileBase
 {
-	public static final FSharpLanguage INSTANCE = new FSharpLanguage();
-
-	public FSharpLanguage()
+	public FSharpFileImpl(@NotNull FileViewProvider viewProvider)
 	{
-		super("F#");
-	}
-
-	@Override
-	public boolean isCaseSensitive()
-	{
-		return true;
+		super(viewProvider, FSharpLanguage.INSTANCE);
 	}
 }

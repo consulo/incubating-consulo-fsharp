@@ -16,11 +16,7 @@
 
 package consulo.fsharp.module.extension;
 
-import javax.swing.JComponent;
-
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import consulo.annotations.RequiredDispatchThread;
 import consulo.module.extension.MutableModuleExtension;
 import consulo.roots.ModuleRootLayer;
 
@@ -33,14 +29,6 @@ public class MonoFSharpMutableModuleExtension extends MonoFSharpModuleExtension 
 	public MonoFSharpMutableModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
-	}
-
-	@RequiredDispatchThread
-	@Nullable
-	@Override
-	public JComponent createConfigurablePanel(@NotNull Runnable updateOnCheck)
-	{
-		return null;
 	}
 
 	@Override

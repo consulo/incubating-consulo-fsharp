@@ -14,26 +14,13 @@
  * limitations under the License.
  */
 
-package consulo.fsharp;
-
-import com.intellij.lang.Language;
+package consulo.fsharp.lang.psi;
 
 /**
  * @author VISTALL
- * @since 12.06.2015
+ * @since 23-Nov-16.
  */
-public class FSharpLanguage extends Language
+public interface FSharpTokenTypes
 {
-	public static final FSharpLanguage INSTANCE = new FSharpLanguage();
 
-	public FSharpLanguage()
-	{
-		super("F#");
-	}
-
-	@Override
-	public boolean isCaseSensitive()
-	{
-		return true;
-	}
 }

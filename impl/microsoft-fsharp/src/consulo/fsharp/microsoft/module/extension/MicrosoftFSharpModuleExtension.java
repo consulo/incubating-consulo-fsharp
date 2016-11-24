@@ -14,26 +14,23 @@
  * limitations under the License.
  */
 
-package consulo.fsharp.module.extension;
+package consulo.fsharp.microsoft.module.extension;
 
 import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.projectRoots.Sdk;
 import consulo.dotnet.compiler.DotNetCompileFailedException;
 import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
-import consulo.dotnet.module.extension.DotNetModuleExtension;
 import consulo.extension.impl.ModuleExtensionImpl;
-import consulo.fsharp.compiler.FSharpCompilerOptionsBuilder;
-import consulo.mono.dotnet.sdk.MonoSdkType;
+import consulo.fsharp.module.extension.FSharpModuleExtension;
 import consulo.roots.ModuleRootLayer;
 
 /**
  * @author VISTALL
- * @since 12.06.2015
+ * @since 23-Nov-16.
  */
-public class MonoFSharpModuleExtension extends ModuleExtensionImpl<MonoFSharpModuleExtension> implements
-		FSharpModuleExtension<MonoFSharpModuleExtension>
+public class MicrosoftFSharpModuleExtension extends ModuleExtensionImpl<MicrosoftFSharpModuleExtension> implements
+		FSharpModuleExtension<MicrosoftFSharpModuleExtension>
 {
-	public MonoFSharpModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
+	public MicrosoftFSharpModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
 	}
@@ -42,15 +39,6 @@ public class MonoFSharpModuleExtension extends ModuleExtensionImpl<MonoFSharpMod
 	@Override
 	public DotNetCompilerOptionsBuilder createCompilerOptionsBuilder() throws DotNetCompileFailedException
 	{
-		FSharpCompilerOptionsBuilder builder = new FSharpCompilerOptionsBuilder();
-
-		DotNetModuleExtension extension = getModuleRootLayer().getExtension(DotNetModuleExtension.class);
-		assert extension != null;
-		Sdk sdk = extension.getSdk();
-		assert sdk != null;
-
-		builder.setExecutable(MonoSdkType.getInstance().getExecutable(extension.getSdk()));
-		builder.addProgramArgument(sdk.getHomePath() + "/fsc.exe");
-		return builder;
+		return null;
 	}
 }
