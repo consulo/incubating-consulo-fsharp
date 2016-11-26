@@ -21,8 +21,10 @@
 	<depends config-file="consulo.dotnet.mono.xml" optional="true">consulo.dotnet.mono</depends>
 
 	<extensions defaultExtensionNs="com.intellij">
-		<fileTypeFactory implementation="consulo.fsharp.FSharpFileTypeFactory" />
+		<fileTypeFactory implementation="consulo.fsharp.FSharpFileTypeFactory"/>
 
-		<lang.parserDefinition language="F#" implementationClass="consulo.fsharp.lang.FSharpParserDefinition" />
+		<lang.syntaxHighlighterFactory key="F#" implementationClass="consulo.fsharp.editor.highlight.FSharpSyntaxHighlighterFactory"/>
+
+		<lang.parserDefinition language="F#" implementationClass="consulo.fsharp.lang.FSharpParserDefinition"/>
 	</extensions>
 </idea-plugin>

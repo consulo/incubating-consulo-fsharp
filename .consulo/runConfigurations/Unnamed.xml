@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Unnamed" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Consulo In Sandbox" singleton="true">
-    <option name="VM_PARAMETERS" value="-Xmx1G -Xms512m -XX:MaxPermSize=512m -ea" />
+    <option name="VM_PARAMETERS" value="-Xmx1G -Xms512m -ea" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="USE_ALT_CONSULO_SDK" value="false" />
     <option name="ALT_CONSULO_SDK_PATH" />
-    <option name="INTERNAL_MODE" value="false" />
+    <option name="INTERNAL_MODE" value="true" />
     <java-sdk name="1.8" />
     <consulo-sdk name="Consulo SNAPSHOT" />
     <artifact name="plugin" />

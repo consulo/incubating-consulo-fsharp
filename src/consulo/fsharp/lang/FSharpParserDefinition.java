@@ -19,18 +19,16 @@ package consulo.fsharp.lang;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
-import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiParser;
-import com.intellij.lexer.EmptyLexer;
 import com.intellij.lexer.Lexer;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
-import com.intellij.psi.TokenType;
-import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 import consulo.fsharp.FSharpLanguage;
+import consulo.fsharp.lang.lexer._FSharpLexer;
+import consulo.fsharp.lang.parser.FSharpPsiParser;
 import consulo.fsharp.lang.psi.FSharpFileImpl;
 import consulo.lang.LanguageVersion;
 
@@ -46,28 +44,14 @@ public class FSharpParserDefinition implements ParserDefinition
 	@Override
 	public Lexer createLexer(@NotNull LanguageVersion languageVersion)
 	{
-		return new EmptyLexer();
+		return new _FSharpLexer();
 	}
 
 	@NotNull
 	@Override
 	public PsiParser createParser(@NotNull LanguageVersion languageVersion)
 	{
-		return new PsiParser()
-		{
-			@NotNull
-			@Override
-			public ASTNode parse(@NotNull IElementType root, @NotNull PsiBuilder builder, @NotNull LanguageVersion languageVersion)
-			{
-				PsiBuilder.Marker mark = builder.mark();
-				while(!builder.eof())
-				{
-					builder.advanceLexer();
-				}
-				mark.done(root);
-				return builder.getTreeBuilt();
-			}
-		};
+		return new FSharpPsiParser();
 	}
 
 	@NotNull
@@ -81,7 +65,8 @@ public class FSharpParserDefinition implements ParserDefinition
 	@Override
 	public TokenSet getWhitespaceTokens(@NotNull LanguageVersion languageVersion)
 	{
-		return TokenSet.create(TokenType.WHITE_SPACE);
+		return TokenSet.EMPTY;
+		//return TokenSet.create(TokenType.WHITE_SPACE, FSharpTokenTypes.EOF);
 	}
 
 	@NotNull

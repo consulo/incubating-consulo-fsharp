@@ -16,27 +16,18 @@
 
 package consulo.fsharp.lang.psi;
 
-import com.intellij.psi.TokenType;
+import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import com.intellij.psi.tree.IElementType;
 import consulo.fsharp.FSharpLanguage;
+import consulo.psi.tree.ElementTypeAsPsiFactory;
 
 /**
  * @author VISTALL
- * @since 23-Nov-16.
+ * @since 24-Nov-16.
  */
-public interface FSharpTokenTypes extends TokenType
+public interface FSharpElementTypes
 {
-	IElementType EOF = new IElementType("EOF", FSharpLanguage.INSTANCE);
+	IElementType IMPORT_DECLARATION = new ElementTypeAsPsiFactory("IMPORT_DECLARATION", FSharpLanguage.INSTANCE, ASTWrapperPsiElement.class);
 
-	IElementType LINE_COMMENT = new IElementType("LINE_COMMENT", FSharpLanguage.INSTANCE);
-
-	IElementType OPEN_KEYWORD = new IElementType("OPEN_KEYWORD", FSharpLanguage.INSTANCE);
-
-	IElementType LET_KEYWORD = new IElementType("LET_KEYWORD", FSharpLanguage.INSTANCE);
-
-	IElementType NEW_KEYWORD = new IElementType("NEW_KEYWORD", FSharpLanguage.INSTANCE);
-
-	IElementType IDENTIFIER = new IElementType("IDENTIFIER", FSharpLanguage.INSTANCE);
-
-	IElementType DOT = new IElementType("DOT", FSharpLanguage.INSTANCE);
+	IElementType REFERENCE_EXPRESSION = new ElementTypeAsPsiFactory("REFERENCE_EXPRESSION", FSharpLanguage.INSTANCE, ASTWrapperPsiElement.class);
 }
