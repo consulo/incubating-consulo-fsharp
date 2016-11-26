@@ -35,18 +35,31 @@ public class FSharpPsiBuilder extends PsiBuilderAdapter
 		super(delegate);
 	}
 
+	public void advanceLexerNoAdvanceEof()
+	{
+		advanceLexerInner(false);
+		super.advanceLexer();
+	}
+
 	@Override
 	public void advanceLexer()
 	{
-		advanceLexerInner();
+		advanceLexerInner(true);
 		super.advanceLexer();
+	}
+
+	@Nullable
+	public IElementType getTokenTypeNoAdvanceEof()
+	{
+		advanceLexerInner(false);
+		return super.getTokenType();
 	}
 
 	@Nullable
 	@Override
 	public IElementType getTokenType()
 	{
-		advanceLexerInner();
+		advanceLexerInner(true);
 		return super.getTokenType();
 	}
 
@@ -54,11 +67,29 @@ public class FSharpPsiBuilder extends PsiBuilderAdapter
 	@Override
 	public String getTokenText()
 	{
-		advanceLexerInner();
+		advanceLexerInner(true);
 		return super.getTokenText();
 	}
 
-	private void advanceLexerInner()
+	public void wantEof()
+	{
+		IElementType tokenTypeNoEof = getTokenTypeNoAdvanceEof();
+		if(tokenTypeNoEof == null)
+		{
+			return;
+		}
+
+		if(tokenTypeNoEof == FSharpTokenTypes.EOF)
+		{
+			super.advanceLexer();
+		}
+		else
+		{
+			error("Expected new line");
+		}
+	}
+
+	private void advanceLexerInner(boolean eof)
 	{
 		while(true)
 		{
@@ -68,7 +99,7 @@ public class FSharpPsiBuilder extends PsiBuilderAdapter
 				return;
 			}
 
-			if(tokenType == FSharpTokenTypes.EOF)
+			if(eof && tokenType == FSharpTokenTypes.EOF)
 			{
 				myIndentSize = -1;
 				super.advanceLexer();

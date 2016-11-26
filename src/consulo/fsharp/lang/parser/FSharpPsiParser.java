@@ -42,14 +42,14 @@ public class FSharpPsiParser implements PsiParser
 
 		while(!builder.eof())
 		{
-			IElementType tokenType = builder.getTokenType();
+			IElementType tokenType = builder.getTokenTypeNoAdvanceEof();
 			if(tokenType == FSharpTokenTypes.OPEN_KEYWORD)
 			{
 				parseImportDeclaration(builder);
 			}
 			else
 			{
-				builder.advanceLexer();
+				builder.advanceLexerNoAdvanceEof();
 			}
 		}
 
@@ -61,29 +61,32 @@ public class FSharpPsiParser implements PsiParser
 	{
 		PsiBuilder.Marker mark = builder.mark();
 
-		builder.advanceLexer();
+		builder.advanceLexerNoAdvanceEof();
 
 		if(parseQualifiedReferenceExpression(builder, null) == null)
 		{
 			builder.error("Expected expression");
 		}
 
+		builder.wantEof();
+
 		mark.done(FSharpElementTypes.IMPORT_DECLARATION);
 	}
 
 	private PsiBuilder.Marker parseQualifiedReferenceExpression(FSharpPsiBuilder builder, @Nullable PsiBuilder.Marker prevMarker)
 	{
-		IElementType tokenType = builder.getTokenType();
+		IElementType tokenType = builder.getTokenTypeNoAdvanceEof();
 
 		if(tokenType == FSharpTokenTypes.IDENTIFIER)
 		{
 			PsiBuilder.Marker mark = prevMarker == null ? builder.mark() : prevMarker;
-			builder.advanceLexer();
+			builder.advanceLexerNoAdvanceEof();
 			mark.done(FSharpElementTypes.REFERENCE_EXPRESSION);
 
-			if(builder.getTokenType() == FSharpTokenTypes.DOT)
+			IElementType nextTokenType = builder.getTokenTypeNoAdvanceEof();
+			if(nextTokenType == FSharpTokenTypes.DOT)
 			{
-				builder.advanceLexer();
+				builder.advanceLexerNoAdvanceEof();
 
 				return parseQualifiedReferenceExpression(builder, mark.precede());
 			}
