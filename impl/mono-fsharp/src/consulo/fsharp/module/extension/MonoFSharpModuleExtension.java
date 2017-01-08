@@ -21,8 +21,8 @@ import com.intellij.openapi.projectRoots.Sdk;
 import consulo.dotnet.compiler.DotNetCompileFailedException;
 import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
 import consulo.dotnet.module.extension.DotNetModuleExtension;
-import consulo.extension.impl.ModuleExtensionImpl;
 import consulo.fsharp.compiler.FSharpCompilerOptionsBuilder;
+import consulo.module.extension.impl.ModuleExtensionImpl;
 import consulo.mono.dotnet.sdk.MonoSdkType;
 import consulo.roots.ModuleRootLayer;
 
@@ -30,8 +30,7 @@ import consulo.roots.ModuleRootLayer;
  * @author VISTALL
  * @since 12.06.2015
  */
-public class MonoFSharpModuleExtension extends ModuleExtensionImpl<MonoFSharpModuleExtension> implements
-		FSharpModuleExtension<MonoFSharpModuleExtension>
+public class MonoFSharpModuleExtension extends ModuleExtensionImpl<MonoFSharpModuleExtension> implements FSharpModuleExtension<MonoFSharpModuleExtension>
 {
 	public MonoFSharpModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
 	{
