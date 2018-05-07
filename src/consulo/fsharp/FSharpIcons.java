@@ -16,12 +16,11 @@
 
 package consulo.fsharp;
 
-import javax.swing.Icon;
-
 import com.intellij.openapi.util.IconLoader;
+import consulo.ui.image.Image;
 
 // Generated Consulo DevKit plugin 
 public interface FSharpIcons
 {
-	Icon Fsharp = IconLoader.getIcon("/icons/fsharp.png");  // 16x16
+	Image Fsharp = IconLoader.getIcon("/icons/fsharp.png");  // 16x16
 }
