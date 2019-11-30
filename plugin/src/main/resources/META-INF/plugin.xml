@@ -14,7 +14,7 @@
   - limitations under the License.
   -->
 
-<idea-plugin>
+<consulo-plugin>
 	<id>consulo.fsharp</id>
 	<name>F#</name>
 	<depends>consulo.dotnet</depends>
@@ -27,4 +27,4 @@
 
 		<lang.parserDefinition language="F#" implementationClass="consulo.fsharp.lang.FSharpParserDefinition"/>
 	</extensions>
-</idea-plugin>
+</consulo-plugin>

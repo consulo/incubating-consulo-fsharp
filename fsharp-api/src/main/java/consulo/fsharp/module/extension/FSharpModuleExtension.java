@@ -16,14 +16,14 @@
 
 package consulo.fsharp.module.extension;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import com.intellij.psi.PsiElement;
-import consulo.annotations.RequiredReadAction;
+import consulo.annotation.access.RequiredReadAction;
 import consulo.dotnet.module.extension.DotNetModuleLangExtension;
 import consulo.fsharp.FSharpFileType;
 import consulo.module.extension.ModuleExtension;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * @author VISTALL
