@@ -21,8 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.openapi.compiler.CompilerMessageCategory;
 import com.intellij.openapi.module.Module;
@@ -53,13 +53,13 @@ public class FSharpCompilerOptionsBuilder implements DotNetCompilerOptionsBuilde
 	private final List<String> myArguments = new ArrayList<String>();
 	private final List<String> myProgramArguments = new ArrayList<String>();
 
-	public FSharpCompilerOptionsBuilder addArgument(@NotNull String arg)
+	public FSharpCompilerOptionsBuilder addArgument(@Nonnull String arg)
 	{
 		myArguments.add(arg + "\n");
 		return this;
 	}
 
-	public FSharpCompilerOptionsBuilder addProgramArgument(@NotNull String arg)
+	public FSharpCompilerOptionsBuilder addProgramArgument(@Nonnull String arg)
 	{
 		myProgramArguments.add(arg);
 		return this;
@@ -70,7 +70,7 @@ public class FSharpCompilerOptionsBuilder implements DotNetCompilerOptionsBuilde
 		myExecutable = executable;
 	}
 
-	public void setExecutableFromSdk(@NotNull Sdk sdk, @NotNull String executableFromSdk)
+	public void setExecutableFromSdk(@Nonnull Sdk sdk, @Nonnull String executableFromSdk)
 	{
 		myExecutable = sdk.getHomePath() + File.separatorChar + executableFromSdk;
 	}
@@ -82,11 +82,11 @@ public class FSharpCompilerOptionsBuilder implements DotNetCompilerOptionsBuilde
 		return new DotNetCompilerMessage(CompilerMessageCategory.WARNING, s, null, -1, 1);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
-	public GeneralCommandLine createCommandLine(@NotNull Module module,
-			@NotNull VirtualFile[] results,
-			@NotNull DotNetModuleExtension<?> extension) throws Exception
+	public GeneralCommandLine createCommandLine(@Nonnull Module module,
+			@Nonnull VirtualFile[] results,
+			@Nonnull DotNetModuleExtension<?> extension) throws Exception
 	{
 		if(myExecutable == null)
 		{

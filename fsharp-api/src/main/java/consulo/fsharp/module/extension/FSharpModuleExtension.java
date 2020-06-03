@@ -22,8 +22,8 @@ import consulo.annotation.access.RequiredReadAction;
 import consulo.dotnet.module.extension.DotNetModuleLangExtension;
 import consulo.fsharp.FSharpFileType;
 import consulo.module.extension.ModuleExtension;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * @author VISTALL
@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 public interface FSharpModuleExtension<T extends FSharpModuleExtension<T>> extends ModuleExtension<T>, DotNetModuleLangExtension<T>
 {
 	@RequiredReadAction
-	@NotNull
+	@Nonnull
 	@Override
 	default PsiElement[] getEntryPointElements()
 	{
@@ -47,7 +47,7 @@ public interface FSharpModuleExtension<T extends FSharpModuleExtension<T>> exten
 		return null; //TODO [VISTALL] resolve from AssemblyInfo.fs
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	default LanguageFileType getFileType()
 	{

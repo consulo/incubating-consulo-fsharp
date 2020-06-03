@@ -16,9 +16,14 @@
 
 package consulo.fsharp.module.extension;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import consulo.disposer.Disposable;
 import consulo.module.extension.MutableModuleExtension;
 import consulo.roots.ModuleRootLayer;
+import consulo.ui.Component;
+import consulo.ui.annotation.RequiredUIAccess;
 
 /**
  * @author VISTALL
@@ -26,9 +31,17 @@ import consulo.roots.ModuleRootLayer;
  */
 public class MonoFSharpMutableModuleExtension extends MonoFSharpModuleExtension implements MutableModuleExtension<MonoFSharpModuleExtension>
 {
-	public MonoFSharpMutableModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
+	public MonoFSharpMutableModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
+	}
+
+	@RequiredUIAccess
+	@Nullable
+	@Override
+	public Component createConfigurationComponent(@Nonnull Disposable disposable, @Nonnull Runnable runnable)
+	{
+		return null;
 	}
 
 	@Override
@@ -38,7 +51,7 @@ public class MonoFSharpMutableModuleExtension extends MonoFSharpModuleExtension 
 	}
 
 	@Override
-	public boolean isModified(@NotNull MonoFSharpModuleExtension originalExtension)
+	public boolean isModified(@Nonnull MonoFSharpModuleExtension originalExtension)
 	{
 		return myIsEnabled != originalExtension.isEnabled();
 	}

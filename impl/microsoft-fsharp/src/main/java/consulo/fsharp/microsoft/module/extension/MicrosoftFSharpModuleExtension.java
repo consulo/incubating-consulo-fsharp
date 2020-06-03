@@ -16,7 +16,7 @@
 
 package consulo.fsharp.microsoft.module.extension;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import consulo.dotnet.compiler.DotNetCompileFailedException;
 import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
 import consulo.fsharp.module.extension.FSharpModuleExtension;
@@ -29,12 +29,12 @@ import consulo.roots.ModuleRootLayer;
  */
 public class MicrosoftFSharpModuleExtension extends ModuleExtensionImpl<MicrosoftFSharpModuleExtension> implements FSharpModuleExtension<MicrosoftFSharpModuleExtension>
 {
-	public MicrosoftFSharpModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
+	public MicrosoftFSharpModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public DotNetCompilerOptionsBuilder createCompilerOptionsBuilder() throws DotNetCompileFailedException
 	{

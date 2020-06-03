@@ -16,7 +16,8 @@
 
 package consulo.fsharp.lang;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
@@ -40,63 +41,63 @@ public class FSharpParserDefinition implements ParserDefinition
 {
 	private static final IFileElementType ourFileElementType = new IFileElementType(FSharpLanguage.INSTANCE);
 
-	@NotNull
+	@Nonnull
 	@Override
-	public Lexer createLexer(@NotNull LanguageVersion languageVersion)
+	public Lexer createLexer(@Nonnull LanguageVersion languageVersion)
 	{
 		return new _FSharpLexer();
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
-	public PsiParser createParser(@NotNull LanguageVersion languageVersion)
+	public PsiParser createParser(@Nonnull LanguageVersion languageVersion)
 	{
 		return new FSharpPsiParser();
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public IFileElementType getFileNodeType()
 	{
 		return ourFileElementType;
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
-	public TokenSet getWhitespaceTokens(@NotNull LanguageVersion languageVersion)
+	public TokenSet getWhitespaceTokens(@Nonnull LanguageVersion languageVersion)
 	{
 		return TokenSet.EMPTY;
 		//return TokenSet.create(TokenType.WHITE_SPACE, FSharpTokenTypes.EOF);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
-	public TokenSet getCommentTokens(@NotNull LanguageVersion languageVersion)
+	public TokenSet getCommentTokens(@Nonnull LanguageVersion languageVersion)
 	{
 		return TokenSet.EMPTY;
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
-	public TokenSet getStringLiteralElements(@NotNull LanguageVersion languageVersion)
+	public TokenSet getStringLiteralElements(@Nonnull LanguageVersion languageVersion)
 	{
 		return TokenSet.EMPTY;
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
-	public PsiElement createElement(@NotNull ASTNode astNode)
+	public PsiElement createElement(@Nonnull ASTNode astNode)
 	{
 		throw new UnsupportedOperationException();
 	}
 
 	@Override
-	public PsiFile createFile(@NotNull FileViewProvider fileViewProvider)
+	public PsiFile createFile(@Nonnull FileViewProvider fileViewProvider)
 	{
 		return new FSharpFileImpl(fileViewProvider);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode astNode, ASTNode astNode1)
 	{

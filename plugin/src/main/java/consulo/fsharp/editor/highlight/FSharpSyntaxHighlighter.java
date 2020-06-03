@@ -19,7 +19,7 @@ package consulo.fsharp.editor.highlight;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.editor.HighlighterColors;
@@ -46,14 +46,14 @@ public class FSharpSyntaxHighlighter extends SyntaxHighlighterBase
 		safeMap(ourKeys, FSharpTokenTypes.BAD_CHARACTER, HighlighterColors.BAD_CHARACTER);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public Lexer getHighlightingLexer()
 	{
 		return new _FSharpLexer();
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public TextAttributesKey[] getTokenHighlights(IElementType iElementType)
 	{

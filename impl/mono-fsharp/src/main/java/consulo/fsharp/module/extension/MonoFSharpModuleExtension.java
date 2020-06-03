@@ -16,7 +16,8 @@
 
 package consulo.fsharp.module.extension;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.openapi.projectRoots.Sdk;
 import consulo.dotnet.compiler.DotNetCompileFailedException;
 import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
@@ -32,12 +33,12 @@ import consulo.roots.ModuleRootLayer;
  */
 public class MonoFSharpModuleExtension extends ModuleExtensionImpl<MonoFSharpModuleExtension> implements FSharpModuleExtension<MonoFSharpModuleExtension>
 {
-	public MonoFSharpModuleExtension(@NotNull String id, @NotNull ModuleRootLayer moduleRootLayer)
+	public MonoFSharpModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{
 		super(id, moduleRootLayer);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public DotNetCompilerOptionsBuilder createCompilerOptionsBuilder() throws DotNetCompileFailedException
 	{

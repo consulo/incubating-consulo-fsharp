@@ -16,8 +16,8 @@
 
 package consulo.fsharp;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import consulo.ui.image.Image;
 
@@ -34,21 +34,21 @@ public class FSharpFileType extends LanguageFileType
 		super(FSharpLanguage.INSTANCE);
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public String getId()
 	{
 		return "F#";
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public String getDescription()
 	{
 		return "F# file types";
 	}
 
-	@NotNull
+	@Nonnull
 	@Override
 	public String getDefaultExtension()
 	{

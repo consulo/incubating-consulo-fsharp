@@ -16,7 +16,7 @@
 
 package consulo.fsharp.lang.psi;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.psi.FileViewProvider;
 import consulo.fsharp.FSharpLanguage;
@@ -27,7 +27,7 @@ import consulo.fsharp.FSharpLanguage;
  */
 public class FSharpFileImpl extends PsiFileBase
 {
-	public FSharpFileImpl(@NotNull FileViewProvider viewProvider)
+	public FSharpFileImpl(@Nonnull FileViewProvider viewProvider)
 	{
 		super(viewProvider, FSharpLanguage.INSTANCE);
 	}
