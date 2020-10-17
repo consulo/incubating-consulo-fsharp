@@ -23,7 +23,7 @@
 	<extensions defaultExtensionNs="com.intellij">
 		<fileTypeFactory implementation="consulo.fsharp.FSharpFileTypeFactory"/>
 
-		<lang.syntaxHighlighterFactory key="F#" implementationClass="consulo.fsharp.editor.highlight.FSharpSyntaxHighlighterFactory"/>
+		<lang.syntaxHighlighterFactory language="F#" implementationClass="consulo.fsharp.editor.highlight.FSharpSyntaxHighlighterFactory"/>
 
 		<lang.parserDefinition language="F#" implementationClass="consulo.fsharp.lang.FSharpParserDefinition"/>
 	</extensions>

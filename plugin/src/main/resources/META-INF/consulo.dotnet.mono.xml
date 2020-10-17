@@ -19,7 +19,7 @@
 		<moduleExtensionProvider key="mono-fsharp"
 								 parentKey="mono-dotnet"
 								 name="F#"
-								 icon="/icons/fsharp.png"
+								 icon="consulo.fsharp.api.FSharpApiIconGroup@fsharp"
 								 immutableClass="consulo.fsharp.module.extension.MonoFSharpModuleExtension"
 								 mutableClass="consulo.fsharp.module.extension.MonoFSharpMutableModuleExtension"/>
 	</extensions>
