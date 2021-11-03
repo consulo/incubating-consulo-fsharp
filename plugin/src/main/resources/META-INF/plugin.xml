@@ -18,6 +18,10 @@
 	<id>consulo.fsharp</id>
 	<name>F#</name>
 	<depends>consulo.dotnet</depends>
+	<category>Custom Languages</category>
+	<tags>
+		<tag>custom.language</tag>
+	</tags>
 	<depends config-file="consulo.dotnet.mono.xml" optional="true">consulo.dotnet.mono</depends>
 
 	<extensions defaultExtensionNs="com.intellij">
