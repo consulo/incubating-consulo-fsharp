@@ -21,7 +21,6 @@ import consulo.fsharp.api.icon.FSharpApiIconGroup;
 import consulo.ui.image.Image;
 
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * @author VISTALL
@@ -57,10 +56,10 @@ public class FSharpFileType extends LanguageFileType
 		return "fs";
 	}
 
-	@Nullable
+	@Nonnull
 	@Override
 	public Image getIcon()
 	{
-		return FSharpApiIconGroup.fsharp();
+		return FSharpApiIconGroup.fsharpFile();
 	}
 }
