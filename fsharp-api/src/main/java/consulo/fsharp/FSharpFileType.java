@@ -18,6 +18,7 @@ package consulo.fsharp;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import consulo.fsharp.api.icon.FSharpApiIconGroup;
+import consulo.localize.LocalizeValue;
 import consulo.ui.image.Image;
 
 import javax.annotation.Nonnull;
@@ -44,9 +45,9 @@ public class FSharpFileType extends LanguageFileType
 
 	@Nonnull
 	@Override
-	public String getDescription()
+	public LocalizeValue getDescription()
 	{
-		return "F# file types";
+		return LocalizeValue.localizeTODO("F# files");
 	}
 
 	@Nonnull
