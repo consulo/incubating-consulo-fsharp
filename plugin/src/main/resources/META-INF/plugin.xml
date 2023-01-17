@@ -22,13 +22,6 @@
 	<tags>
 		<tag>custom.language</tag>
 	</tags>
-	<depends config-file="consulo.dotnet.mono.xml" optional="true">consulo.dotnet.mono</depends>
-
-	<extensions defaultExtensionNs="com.intellij">
-		<fileTypeFactory implementation="consulo.fsharp.FSharpFileTypeFactory"/>
-
-		<lang.syntaxHighlighterFactory language="F#" implementationClass="consulo.fsharp.editor.highlight.FSharpSyntaxHighlighterFactory"/>
-
-		<lang.parserDefinition language="F#" implementationClass="consulo.fsharp.lang.FSharpParserDefinition"/>
-	</extensions>
+	<depends optional="true">consulo.dotnet.mono</depends>
+	<depends optional="true">consulo.dotnet.microsoft</depends>
 </consulo-plugin>

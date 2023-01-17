@@ -14,18 +14,18 @@
  * limitations under the License.
  */
 
-package consulo.fsharp.lang.parser;
+package consulo.fsharp.impl.lang.parser;
+
+import consulo.fsharp.impl.lang.psi.FSharpElementTypes;
+import consulo.fsharp.impl.lang.psi.FSharpTokenTypes;
+import consulo.language.ast.ASTNode;
+import consulo.language.ast.IElementType;
+import consulo.language.parser.PsiBuilder;
+import consulo.language.parser.PsiParser;
+import consulo.language.version.LanguageVersion;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
-import com.intellij.lang.ASTNode;
-import com.intellij.lang.PsiBuilder;
-import com.intellij.lang.PsiParser;
-import com.intellij.psi.tree.IElementType;
-import consulo.fsharp.lang.psi.FSharpElementTypes;
-import consulo.fsharp.lang.psi.FSharpTokenTypes;
-import consulo.lang.LanguageVersion;
 
 /**
  * @author VISTALL

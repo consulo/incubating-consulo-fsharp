@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-package consulo.fsharp;
+package consulo.fsharp.impl.lang.psi;
+
+import consulo.fsharp.FSharpLanguage;
+import consulo.language.file.FileViewProvider;
+import consulo.language.impl.psi.PsiFileBase;
 
 import javax.annotation.Nonnull;
 
-import com.intellij.openapi.fileTypes.FileTypeConsumer;
-import com.intellij.openapi.fileTypes.FileTypeFactory;
-
 /**
  * @author VISTALL
- * @since 12.06.2015
+ * @since 23-Nov-16.
  */
-public class FSharpFileTypeFactory extends FileTypeFactory
+public class FSharpFileImpl extends PsiFileBase
 {
-	@Override
-	public void createFileTypes(@Nonnull FileTypeConsumer consumer)
+	public FSharpFileImpl(@Nonnull FileViewProvider viewProvider)
 	{
-		consumer.consume(FSharpFileType.INSTANCE);
+		super(viewProvider, FSharpLanguage.INSTANCE);
 	}
 }

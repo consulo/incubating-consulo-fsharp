@@ -14,24 +14,25 @@
  * limitations under the License.
  */
 
-package consulo.fsharp.module.extension;
+package consulo.fsharp.mono.module.extension;
 
-import javax.annotation.Nonnull;
-
-import com.intellij.openapi.projectRoots.Sdk;
+import consulo.content.bundle.Sdk;
 import consulo.dotnet.compiler.DotNetCompileFailedException;
 import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
 import consulo.dotnet.module.extension.DotNetModuleExtension;
 import consulo.fsharp.compiler.FSharpCompilerOptionsBuilder;
-import consulo.module.extension.impl.ModuleExtensionImpl;
+import consulo.fsharp.module.extension.FSharpModuleExtension;
+import consulo.module.content.layer.ModuleRootLayer;
+import consulo.module.content.layer.extension.ModuleExtensionBase;
 import consulo.mono.dotnet.sdk.MonoSdkType;
-import consulo.roots.ModuleRootLayer;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author VISTALL
  * @since 12.06.2015
  */
-public class MonoFSharpModuleExtension extends ModuleExtensionImpl<MonoFSharpModuleExtension> implements FSharpModuleExtension<MonoFSharpModuleExtension>
+public class MonoFSharpModuleExtension extends ModuleExtensionBase<MonoFSharpModuleExtension> implements FSharpModuleExtension<MonoFSharpModuleExtension>
 {
 	public MonoFSharpModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{

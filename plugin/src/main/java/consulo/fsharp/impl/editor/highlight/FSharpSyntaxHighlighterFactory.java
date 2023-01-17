@@ -14,20 +14,34 @@
  * limitations under the License.
  */
 
-package consulo.fsharp.lang.psi;
+package consulo.fsharp.impl.editor.highlight;
 
-import com.intellij.extapi.psi.ASTWrapperPsiElement;
-import com.intellij.psi.tree.IElementType;
+import consulo.annotation.component.ExtensionImpl;
 import consulo.fsharp.FSharpLanguage;
-import consulo.psi.tree.ElementTypeAsPsiFactory;
+import consulo.language.Language;
+import consulo.language.editor.highlight.SingleLazyInstanceSyntaxHighlighterFactory;
+import consulo.language.editor.highlight.SyntaxHighlighter;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author VISTALL
- * @since 24-Nov-16.
+ * @since 26-Nov-16.
  */
-public interface FSharpElementTypes
+@ExtensionImpl
+public class FSharpSyntaxHighlighterFactory extends SingleLazyInstanceSyntaxHighlighterFactory
 {
-	IElementType IMPORT_DECLARATION = new ElementTypeAsPsiFactory("IMPORT_DECLARATION", FSharpLanguage.INSTANCE, ASTWrapperPsiElement.class);
+	@Nonnull
+	@Override
+	protected SyntaxHighlighter createHighlighter()
+	{
+		return new FSharpSyntaxHighlighter();
+	}
 
-	IElementType REFERENCE_EXPRESSION = new ElementTypeAsPsiFactory("REFERENCE_EXPRESSION", FSharpLanguage.INSTANCE, ASTWrapperPsiElement.class);
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return FSharpLanguage.INSTANCE;
+	}
 }

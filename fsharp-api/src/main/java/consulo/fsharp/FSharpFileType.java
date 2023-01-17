@@ -16,8 +16,8 @@
 
 package consulo.fsharp;
 
-import com.intellij.openapi.fileTypes.LanguageFileType;
-import consulo.fsharp.api.icon.FSharpApiIconGroup;
+import consulo.fsharp.icon.FSharpIconGroup;
+import consulo.language.file.LanguageFileType;
 import consulo.localize.LocalizeValue;
 import consulo.ui.image.Image;
 
@@ -61,6 +61,6 @@ public class FSharpFileType extends LanguageFileType
 	@Override
 	public Image getIcon()
 	{
-		return FSharpApiIconGroup.fsharpFile();
+		return FSharpIconGroup.fsharpfile();
 	}
 }

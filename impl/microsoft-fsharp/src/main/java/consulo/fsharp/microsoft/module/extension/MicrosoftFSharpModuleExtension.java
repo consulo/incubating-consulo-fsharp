@@ -16,18 +16,19 @@
 
 package consulo.fsharp.microsoft.module.extension;
 
-import javax.annotation.Nonnull;
 import consulo.dotnet.compiler.DotNetCompileFailedException;
 import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
 import consulo.fsharp.module.extension.FSharpModuleExtension;
-import consulo.module.extension.impl.ModuleExtensionImpl;
-import consulo.roots.ModuleRootLayer;
+import consulo.module.content.layer.ModuleRootLayer;
+import consulo.module.content.layer.extension.ModuleExtensionBase;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author VISTALL
  * @since 23-Nov-16.
  */
-public class MicrosoftFSharpModuleExtension extends ModuleExtensionImpl<MicrosoftFSharpModuleExtension> implements FSharpModuleExtension<MicrosoftFSharpModuleExtension>
+public class MicrosoftFSharpModuleExtension extends ModuleExtensionBase<MicrosoftFSharpModuleExtension> implements FSharpModuleExtension<MicrosoftFSharpModuleExtension>
 {
 	public MicrosoftFSharpModuleExtension(@Nonnull String id, @Nonnull ModuleRootLayer moduleRootLayer)
 	{

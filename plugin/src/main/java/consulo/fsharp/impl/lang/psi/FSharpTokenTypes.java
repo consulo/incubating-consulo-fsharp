@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package consulo.fsharp.lang.psi;
+package consulo.fsharp.impl.lang.psi;
 
-import com.intellij.psi.TokenType;
-import com.intellij.psi.tree.IElementType;
 import consulo.fsharp.FSharpLanguage;
+import consulo.language.ast.IElementType;
+import consulo.language.ast.TokenType;
 
 /**
  * @author VISTALL

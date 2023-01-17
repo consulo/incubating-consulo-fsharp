@@ -16,30 +16,30 @@
 
 package consulo.fsharp.compiler;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import com.intellij.execution.configurations.GeneralCommandLine;
-import com.intellij.openapi.compiler.CompilerMessageCategory;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.module.ModuleUtilCore;
-import com.intellij.openapi.projectRoots.Sdk;
-import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.util.text.StringUtil;
-import com.intellij.openapi.vfs.VfsUtil;
-import com.intellij.openapi.vfs.VirtualFile;
+import consulo.compiler.CompilerMessageCategory;
+import consulo.content.bundle.Sdk;
 import consulo.dotnet.DotNetTarget;
 import consulo.dotnet.compiler.DotNetCompileFailedException;
 import consulo.dotnet.compiler.DotNetCompilerMessage;
 import consulo.dotnet.compiler.DotNetCompilerOptionsBuilder;
-import consulo.dotnet.compiler.DotNetCompilerUtil;
 import consulo.dotnet.compiler.DotNetMacroUtil;
+import consulo.dotnet.impl.compiler.DotNetCompilerUtil;
 import consulo.dotnet.module.extension.DotNetModuleExtension;
 import consulo.fsharp.module.extension.FSharpModuleExtension;
+import consulo.language.util.ModuleUtilCore;
+import consulo.module.Module;
+import consulo.process.cmd.GeneralCommandLine;
+import consulo.util.io.FileUtil;
+import consulo.util.lang.StringUtil;
+import consulo.virtualFileSystem.VirtualFile;
+import consulo.virtualFileSystem.util.VirtualFileUtil;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author VISTALL
@@ -85,8 +85,8 @@ public class FSharpCompilerOptionsBuilder implements DotNetCompilerOptionsBuilde
 	@Nonnull
 	@Override
 	public GeneralCommandLine createCommandLine(@Nonnull Module module,
-			@Nonnull VirtualFile[] results,
-			@Nonnull DotNetModuleExtension<?> extension) throws Exception
+												@Nonnull VirtualFile[] results,
+												@Nonnull DotNetModuleExtension<?> extension) throws Exception
 	{
 		if(myExecutable == null)
 		{
@@ -128,7 +128,7 @@ public class FSharpCompilerOptionsBuilder implements DotNetCompilerOptionsBuilde
 		{
 			for(File libraryFile : libraryFiles)
 			{
-				addArgument("-r:" + StringUtil.QUOTER.fun(FileUtil.toSystemDependentName(libraryFile.getAbsolutePath())));
+				addArgument("-r:" + StringUtil.QUOTER.apply(FileUtil.toSystemDependentName(libraryFile.getAbsolutePath())));
 			}
 		}
 
@@ -195,7 +195,7 @@ public class FSharpCompilerOptionsBuilder implements DotNetCompilerOptionsBuilde
 
 		for(VirtualFile result : results)
 		{
-			addArgument(VfsUtil.getRelativePath(result, module.getModuleDir()));
+			addArgument(VirtualFileUtil.getRelativePath(result, module.getModuleDir()));
 		}
 
 		for(String argument : myArguments)

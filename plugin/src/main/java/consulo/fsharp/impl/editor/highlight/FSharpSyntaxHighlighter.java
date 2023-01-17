@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-package consulo.fsharp.editor.highlight;
+package consulo.fsharp.impl.editor.highlight;
 
-import java.util.HashMap;
-import java.util.Map;
+import consulo.codeEditor.DefaultLanguageHighlighterColors;
+import consulo.codeEditor.HighlighterColors;
+import consulo.colorScheme.TextAttributesKey;
+import consulo.fsharp.impl.lang.lexer._FSharpLexer;
+import consulo.fsharp.impl.lang.psi.FSharpTokenTypes;
+import consulo.language.ast.IElementType;
+import consulo.language.editor.highlight.SyntaxHighlighterBase;
+import consulo.language.lexer.Lexer;
 
 import javax.annotation.Nonnull;
-import com.intellij.lexer.Lexer;
-import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
-import com.intellij.openapi.editor.HighlighterColors;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
-import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
-import com.intellij.psi.tree.IElementType;
-import consulo.fsharp.lang.lexer._FSharpLexer;
-import consulo.fsharp.lang.psi.FSharpTokenTypes;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author VISTALL

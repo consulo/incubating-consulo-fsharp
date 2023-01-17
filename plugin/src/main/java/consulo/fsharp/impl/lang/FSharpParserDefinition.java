@@ -14,32 +14,42 @@
  * limitations under the License.
  */
 
-package consulo.fsharp.lang;
+package consulo.fsharp.impl.lang;
+
+import consulo.annotation.component.ExtensionImpl;
+import consulo.fsharp.FSharpLanguage;
+import consulo.fsharp.impl.lang.lexer._FSharpLexer;
+import consulo.fsharp.impl.lang.parser.FSharpPsiParser;
+import consulo.fsharp.impl.lang.psi.FSharpFileImpl;
+import consulo.language.Language;
+import consulo.language.ast.ASTNode;
+import consulo.language.ast.IFileElementType;
+import consulo.language.ast.TokenSet;
+import consulo.language.file.FileViewProvider;
+import consulo.language.lexer.Lexer;
+import consulo.language.parser.ParserDefinition;
+import consulo.language.parser.PsiParser;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiFile;
+import consulo.language.version.LanguageVersion;
 
 import javax.annotation.Nonnull;
-
-import com.intellij.lang.ASTNode;
-import com.intellij.lang.ParserDefinition;
-import com.intellij.lang.PsiParser;
-import com.intellij.lexer.Lexer;
-import com.intellij.psi.FileViewProvider;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.tree.IFileElementType;
-import com.intellij.psi.tree.TokenSet;
-import consulo.fsharp.FSharpLanguage;
-import consulo.fsharp.lang.lexer._FSharpLexer;
-import consulo.fsharp.lang.parser.FSharpPsiParser;
-import consulo.fsharp.lang.psi.FSharpFileImpl;
-import consulo.lang.LanguageVersion;
 
 /**
  * @author VISTALL
  * @since 23-Nov-16.
  */
+@ExtensionImpl
 public class FSharpParserDefinition implements ParserDefinition
 {
 	private static final IFileElementType ourFileElementType = new IFileElementType(FSharpLanguage.INSTANCE);
+
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return FSharpLanguage.INSTANCE;
+	}
 
 	@Nonnull
 	@Override

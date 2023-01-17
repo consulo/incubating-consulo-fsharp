@@ -16,12 +16,13 @@
 
 package consulo.fsharp.module.extension;
 
-import com.intellij.openapi.fileTypes.LanguageFileType;
-import com.intellij.psi.PsiElement;
 import consulo.annotation.access.RequiredReadAction;
 import consulo.dotnet.module.extension.DotNetModuleLangExtension;
 import consulo.fsharp.FSharpFileType;
+import consulo.language.file.LanguageFileType;
+import consulo.language.psi.PsiElement;
 import consulo.module.extension.ModuleExtension;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 

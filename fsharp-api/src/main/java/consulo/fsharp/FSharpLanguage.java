@@ -16,7 +16,7 @@
 
 package consulo.fsharp;
 
-import com.intellij.lang.Language;
+import consulo.language.Language;
 
 /**
  * @author VISTALL

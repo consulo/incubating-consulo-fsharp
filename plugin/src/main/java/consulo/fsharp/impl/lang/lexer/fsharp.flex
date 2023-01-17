@@ -1,8 +1,8 @@
-package consulo.fsharp.lang.lexer;
+package consulo.fsharp.impl.lang.lexer;
 
-import com.intellij.lexer.LexerBase;
-import com.intellij.psi.tree.IElementType;
-import consulo.fsharp.lang.psi.FSharpTokenTypes;
+import consulo.fsharp.impl.lang.psi.FSharpTokenTypes;
+import consulo.language.ast.IElementType;
+import consulo.language.lexer.LexerBase;
 %%
 
 %public
