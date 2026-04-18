@@ -7,4 +7,7 @@ module consulo.fsharp.microsoft
 	requires consulo.fsharp.api;
 	requires consulo.dotnet.microsoft;
 	requires consulo.dotnet.api;
+
+	requires consulo.module.api;
+	requires consulo.module.content.api;
 }

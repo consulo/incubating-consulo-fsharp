@@ -21,7 +21,7 @@
 
 	<parent>
 		<groupId>consulo</groupId>
-		<artifactId>arch.ide-api-provided</artifactId>
+		<artifactId>arch.bind.java</artifactId>
 		<version>3-SNAPSHOT</version>
 		<relativePath/>
 	</parent>
@@ -58,6 +58,19 @@
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>consulo.fsharp-fsharp.api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>consulo</groupId>
+			<artifactId>consulo-module-api</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>consulo</groupId>
+			<artifactId>consulo-module-content-api</artifactId>
 			<version>${project.version}</version>
 			<scope>provided</scope>
 		</dependency>
