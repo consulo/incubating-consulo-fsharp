@@ -18,13 +18,13 @@ package consulo.fsharp.impl.lang.psi;
 
 import consulo.fsharp.FSharpLanguage;
 import consulo.language.ast.IElementType;
-import consulo.language.ast.TokenType;
+import consulo.language.ast.StandardTokenTypes;
 
 /**
  * @author VISTALL
  * @since 23-Nov-16.
  */
-public interface FSharpTokenTypes extends TokenType
+public interface FSharpTokenTypes extends StandardTokenTypes
 {
 	IElementType EOF = new IElementType("EOF", FSharpLanguage.INSTANCE);
 
