@@ -18,9 +18,11 @@ package consulo.fsharp.impl.lang;
 
 import consulo.annotation.component.ExtensionImpl;
 import consulo.fsharp.FSharpLanguage;
-import consulo.fsharp.impl.lang.lexer._FSharpLexer;
+import consulo.fsharp.impl.lang.lexer.FSharpPreprocessedLexer;
 import consulo.fsharp.impl.lang.parser.FSharpPsiParser;
+import consulo.fsharp.impl.lang.psi.FSharpElementTypes;
 import consulo.fsharp.impl.lang.psi.FSharpFileImpl;
+import consulo.fsharp.impl.lang.psi.FSharpTokenType;
 import consulo.language.Language;
 import consulo.language.ast.ASTNode;
 import consulo.language.ast.IFileElementType;
@@ -35,6 +37,8 @@ import consulo.language.version.LanguageVersion;
 
 import jakarta.annotation.Nonnull;
 
+import java.util.Set;
+
 /**
  * @author VISTALL
  * @since 23-Nov-16.
@@ -42,7 +46,24 @@ import jakarta.annotation.Nonnull;
 @ExtensionImpl
 public class FSharpParserDefinition implements ParserDefinition
 {
-	private static final IFileElementType ourFileElementType = new IFileElementType(FSharpLanguage.INSTANCE);
+
+	/**
+	 * Comments, inactive code and conditional directives: the parser does not see them.
+	 */
+	public static final TokenSet COMMENTS = TokenSet.orSet(FSharpTokenType.COMMENTS, TokenSet.create(
+		FSharpTokenType.DEAD_CODE,
+		FSharpTokenType.PP_IF_SECTION,
+		FSharpTokenType.PP_ELIF_SECTION,
+		FSharpTokenType.PP_ELSE_SECTION,
+		FSharpTokenType.PP_ENDIF,
+		FSharpTokenType.PP_CONDITIONAL_SYMBOL,
+		FSharpTokenType.PP_AND,
+		FSharpTokenType.PP_OR,
+		FSharpTokenType.PP_NOT,
+		FSharpTokenType.PP_LPAR,
+		FSharpTokenType.PP_RPAR,
+		FSharpTokenType.PP_BAD_CHARACTER
+	));
 
 	@Nonnull
 	@Override
@@ -55,7 +76,8 @@ public class FSharpParserDefinition implements ParserDefinition
 	@Override
 	public Lexer createLexer(@Nonnull LanguageVersion languageVersion)
 	{
-		return new _FSharpLexer();
+		// TODO [VISTALL] defined constants of the module
+		return new FSharpPreprocessedLexer(Set.of());
 	}
 
 	@Nonnull
@@ -69,29 +91,28 @@ public class FSharpParserDefinition implements ParserDefinition
 	@Override
 	public IFileElementType getFileNodeType()
 	{
-		return ourFileElementType;
+		return FSharpElementTypes.FSHARP_IMPL_FILE;
 	}
 
 	@Nonnull
 	@Override
 	public TokenSet getWhitespaceTokens(@Nonnull LanguageVersion languageVersion)
 	{
-		return TokenSet.EMPTY;
-		//return TokenSet.create(TokenType.WHITE_SPACE, FSharpTokenTypes.EOF);
+		return FSharpTokenType.WHITESPACES;
 	}
 
 	@Nonnull
 	@Override
 	public TokenSet getCommentTokens(@Nonnull LanguageVersion languageVersion)
 	{
-		return TokenSet.EMPTY;
+		return COMMENTS;
 	}
 
 	@Nonnull
 	@Override
 	public TokenSet getStringLiteralElements(@Nonnull LanguageVersion languageVersion)
 	{
-		return TokenSet.EMPTY;
+		return FSharpTokenType.STRINGS;
 	}
 
 	@Nonnull

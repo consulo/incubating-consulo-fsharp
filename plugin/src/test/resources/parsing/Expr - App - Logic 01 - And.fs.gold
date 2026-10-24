@@ -1,0 +1,15 @@
+﻿Language: PsiLanguageType:F#
+IFSharpImplFile
+  IAnonModuleDeclaration
+    IExpressionStatement
+      IChameleonExpression
+        IBinaryAppExpr
+          ILiteralExpr
+            FSharpTokenType+TrueTokenElement(type:TRUE, text:true)
+          Whitespace(type:WHITE_SPACE, text: ) spaces:" "
+          IReferenceExpr
+            FSharpTokenType+AmpAmpTokenElement(type:AMP_AMP, text:&&)
+          Whitespace(type:WHITE_SPACE, text: ) spaces:" "
+          ILiteralExpr
+            FSharpTokenType+TrueTokenElement(type:TRUE, text:true)
+

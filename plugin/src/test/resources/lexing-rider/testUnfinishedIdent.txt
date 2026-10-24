@@ -1,0 +1,3 @@
+RESERVED_SYMBOLIC_SEQUENCE ('``value ')
+NEW_LINE ('\n')
+STRING ('""')

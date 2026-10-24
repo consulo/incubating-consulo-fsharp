@@ -1,0 +1,13 @@
+﻿Language: PsiLanguageType:F#
+IFSharpImplFile
+  IAnonModuleDeclaration
+    IDoStatement
+      FSharpTokenType+DoTokenElement(type:DO, text:do)
+      NewLine(type:NEW_LINE, text:\n) spaces:"\n"
+      Whitespace(type:WHITE_SPACE, text:  ) spaces:"  "
+      IChameleonExpression
+        IListExpr
+          FSharpTokenType+LbrackTokenElement(type:LBRACK, text:[)
+          FSharpTokenType+RbrackTokenElement(type:RBRACK, text:])
+    NewLine(type:NEW_LINE, text:\n) spaces:"\n"
+

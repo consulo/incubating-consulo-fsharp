@@ -1,0 +1,6 @@
+LPAREN (1,0)
+INT32 (1,1)
+COLON (1,4)
+IDENT (1,6)
+RPAREN (1,9)
+EOF (1,10)

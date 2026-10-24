@@ -1,0 +1,5 @@
+SHEBANG ('#!/bin/sh')
+NEW_LINE ('\n')
+OPEN ('open')
+WHITE_SPACE (' ')
+IDENTIFIER ('System')

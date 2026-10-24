@@ -1,0 +1,8 @@
+IDENT (1,0)
+DOT (1,6)
+LPAREN (1,7)
+BAR (1,8)
+IDENT (1,9)
+BAR (1,14)
+RPAREN (1,15)
+EOF (2,0)

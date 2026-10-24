@@ -1,0 +1,17 @@
+﻿Language: PsiLanguageType:F#
+IFSharpImplFile
+  IAnonModuleDeclaration
+    IExpressionStatement
+      IChameleonExpression
+        IAddressOfExpr
+          FSharpTokenType+AmpTokenElement(type:AMP, text:&)
+          IReferenceExpr
+            FSharpIdentifierToken(type:IDENTIFIER, text:x)
+    NewLine(type:NEW_LINE, text:\n) spaces:"\n"
+    IExpressionStatement
+      IChameleonExpression
+        IAddressOfExpr
+          FSharpTokenType+AmpAmpTokenElement(type:AMP_AMP, text:&&)
+          IReferenceExpr
+            FSharpIdentifierToken(type:IDENTIFIER, text:x)
+

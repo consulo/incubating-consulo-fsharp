@@ -1,0 +1,2 @@
+STRING ('"a\\n          b\\n		c\\n\n	d"')
+NEW_LINE ('\n')

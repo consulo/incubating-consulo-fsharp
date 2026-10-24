@@ -33,6 +33,6 @@ public class FSharpFileTypeFactory extends FileTypeFactory
 	@Override
 	public void createFileTypes(@Nonnull FileTypeConsumer consumer)
 	{
-		consumer.consume(FSharpFileType.INSTANCE);
+		consumer.consume(FSharpFileType.INSTANCE, "fs;fsi;fsx;fsscript");
 	}
 }

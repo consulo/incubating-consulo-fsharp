@@ -1,0 +1,54 @@
+Consulo F# plugin
+Copyright 2013-2026 consulo.io
+
+This repository contains code and test data ported from JetBrains resharper-fsharp
+(https://github.com/JetBrains/resharper-fsharp), F# language support for JetBrains Rider and ReSharper,
+licensed under the Apache License, Version 2.0. Copyright JetBrains s.r.o.
+
+Used parts (ported from commit f3d833155c8f):
+
+* Lexer specification: rider-fsharp/lexer/src/_FSharpLexer.flex and
+  ReSharper.FSharp/src/FSharp/FSharp.Psi/src/Parsing/Lexing/FSharpRules.lex
+  -> plugin/src/main/java/consulo/fsharp/impl/lang/lexer/_FSharpLexer.flex
+* Token types, keyword map and lexer state classes:
+  rider-fsharp/src/main/java/com/jetbrains/rider/ideaInterop/fileTypes/fsharp/lexer
+  -> plugin/src/main/java/consulo/fsharp/impl/lang/lexer, plugin/src/main/java/consulo/fsharp/impl/lang/psi
+* Preprocessor (#if/#elif/#else/#endif): ReSharper.FSharp/src/FSharp/FSharp.Psi/src/Parsing/FSharpPreprocessedLexer.cs
+  and FSharpPreprocessor.cs -> FSharpPreprocessedLexer.java, FSharpPreprocessor.java
+* PSI node names and structure: ReSharper.FSharp/src/FSharp/FSharp.Psi/src/FSharp.psi
+  -> plugin/src/main/java/consulo/fsharp/impl/lang/psi/FSharpElementTypes.java (the parser itself is new code)
+* Test data:
+  - ReSharper.FSharp/test/data/lexing -> plugin/src/test/resources/lexing
+  - ReSharper.FSharp/test/data/parsing -> plugin/src/test/resources/parsing
+  - ReSharper.FSharp/test/data/parsing/signatures -> plugin/src/test/resources/parsing-signatures
+  - rider-fsharp/parserTest/.../lexer/FSharpLexerTest.kt (converted) -> plugin/src/test/resources/lexing-rider
+
+The Apache License, Version 2.0 is included in LICENSE.txt.
+
+This repository also contains code ported from the F# compiler, dotnet/fsharp (https://github.com/dotnet/fsharp),
+licensed under the MIT License. Copyright (c) Microsoft Corporation. All rights reserved.
+
+Used parts (ported from commit fe180deb551c):
+
+* Offside rule: src/Compiler/SyntaxTree/LexFilter.fs
+  -> plugin/src/main/java/consulo/fsharp/impl/lang/parser/FSharpLexFilter.java
+* Grammar structure of the parser: src/Compiler/pars.fsy
+  -> plugin/src/main/java/consulo/fsharp/impl/lang/parser (recursive descent, node names from ReSharper)
+* Token kinds and operator classification: src/Compiler/pars.fsy, src/Compiler/lex.fsl
+  -> FSharpLexFilterKind.java, FSharpLexFilterKinds.java
+* Test data: plugin/src/test/resources/lexfilter is output of the F# compiler (fsc --tokenize)
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of
+the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

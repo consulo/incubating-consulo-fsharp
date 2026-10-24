@@ -1,0 +1,7 @@
+IDENT (1,0)
+QMARK (1,1)
+IDENT (1,2)
+LARROW (1,4)
+LPAREN (1,7)
+RPAREN (1,8)
+EOF (2,0)

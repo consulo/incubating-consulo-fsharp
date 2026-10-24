@@ -46,5 +46,6 @@
 		<module>impl/mono-fsharp</module>
 		<module>impl/microsoft-fsharp</module>
 		<module>plugin</module>
+		<module>fsharp-it</module>
 	</modules>
 </project>

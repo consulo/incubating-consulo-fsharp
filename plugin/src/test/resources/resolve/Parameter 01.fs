@@ -1,0 +1,1 @@
+let f <target>a b = <caret>a + b

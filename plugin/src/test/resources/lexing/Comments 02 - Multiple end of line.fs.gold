@@ -1,0 +1,4 @@
+﻿0000: LINE_COMMENT '// Line comment'
+0015: NEW_LINE '\n'
+0016: LINE_COMMENT '// Another one'
+0030: NEW_LINE '\n'

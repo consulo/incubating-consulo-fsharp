@@ -1,0 +1,17 @@
+﻿Language: PsiLanguageType:F#
+IFSharpImplFile
+  IAnonModuleDeclaration
+    IExpressionStatement
+      IChameleonExpression
+        IParenExpr
+          FSharpTokenType+LparenTokenElement(type:LPAREN, text:()
+          ITypedExpr
+            ILiteralExpr
+              FSharpToken(type:INT32, text:123)
+            FSharpTokenType+ColonTokenElement(type:COLON, text::)
+            Whitespace(type:WHITE_SPACE, text: ) spaces:" "
+            INamedTypeUsage
+              ITypeReferenceName
+                FSharpIdentifierToken(type:IDENTIFIER, text:int)
+          FSharpTokenType+RparenTokenElement(type:RPAREN, text:))
+

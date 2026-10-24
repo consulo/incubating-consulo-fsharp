@@ -1,0 +1,2 @@
+﻿0000: BLOCK_COMMENT '(*\n"""foo"""\n \n """\nbar"""\n *)'
+0030: NEW_LINE '\n'

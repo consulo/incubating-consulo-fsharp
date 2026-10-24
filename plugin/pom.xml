@@ -73,6 +73,19 @@
 	</build>
 
 	<dependencies>
+		<!-- must come first: the platform picks its PluginManager backend from the first one ServiceLoader offers -->
+		<dependency>
+			<groupId>consulo</groupId>
+			<artifactId>consulo-test-junit-impl</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>consulo.fsharp-fsharp.api</artifactId>

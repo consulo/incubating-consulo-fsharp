@@ -1,0 +1,1 @@
+let y = let <target>a = 1 in <caret>a

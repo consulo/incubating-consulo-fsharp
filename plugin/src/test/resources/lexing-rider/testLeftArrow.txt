@@ -1,0 +1,3 @@
+IDENTIFIER ('ident')
+LARROW ('<-')
+IDENTIFIER ('ident')

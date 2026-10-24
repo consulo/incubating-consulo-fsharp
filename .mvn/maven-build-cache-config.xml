@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  - Build cache settings for this repository: maven-build-cache-extension comes from the consulo parent pom.
+  -
+  - Without reconciliation the cache replays a cached surefire:test execution regardless of command line flags:
+  - a build with -Dmaven.test.skip=true followed by a build with tests reports success without running them.
+  - The rules below make surefire run again when the cached execution skipped tests or ran a different selection.
+  -->
+<cache xmlns="http://maven.apache.org/BUILD-CACHE-CONFIG/1.3.0"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://maven.apache.org/BUILD-CACHE-CONFIG/1.3.0 https://maven.apache.org/xsd/build-cache-config-1.3.0.xsd">
+    <executionControl>
+        <reconcile>
+            <plugins>
+                <plugin artifactId="maven-surefire-plugin" goal="test">
+                    <reconciles>
+                        <reconcile propertyName="skip" skipValue="true"/>
+                        <reconcile propertyName="skipExec" skipValue="true"/>
+                        <reconcile propertyName="skipTests" skipValue="true"/>
+                        <reconcile propertyName="testFailureIgnore" skipValue="true"/>
+                        <reconcile propertyName="test"/>
+                    </reconciles>
+                </plugin>
+            </plugins>
+        </reconcile>
+    </executionControl>
+</cache>

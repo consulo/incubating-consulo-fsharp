@@ -1,0 +1,5 @@
+OPEN (1,0)
+IDENT (1,5)
+DOT (1,11)
+IDENT (1,12)
+EOF (2,0)

@@ -1,0 +1,58 @@
+Hash directive 01.fsi
+Nested Module 01.fsi
+Type decl - Delegate.fsi
+Type decl - Union - XmlDoc 01.fsi
+Type decl - Union - XmlDoc 02 - No bar.fsi
+Type decl - Union 01 - After nested module.fsi
+Type decl - Union 02 - FullType.fsi
+Type decl group - XmlDoc 01.fsi
+Type decl group - XmlDoc 02.fsi
+Type decl group - XmlDoc 03 - With attributes 01.fsi
+Type decl group - XmlDoc 03 - With attributes 02.fsi
+Type decl group - XmlDoc 04.fsi
+Type decl group 01.fsi
+Type decl group 02 - Attributes.fsi
+Type member - Abstract 01 - Accessors.fsi
+Type member - Constrained type usage.fsi
+Type member - Constructor 01.fsi
+Type member - Inherit 01.fsi
+Type member - Inherit 02 - Qualifiers.fsi
+Type member - Inherit 03 - Generic.fsi
+Type member - Interface 01.fsi
+Type member - Member - Parameter - Attribute 01.fsi
+Type member - Member - Parameter - Attribute 02.fsi
+Type member - Member - Parameter - Attribute 03.fsi
+Type member - Member - Parameter - Attribute 04.fsi
+Type member - Member - Parameter - Groups 01.fsi
+Type member - Member 01.fsi
+Type member - Member 02 - Parameter 01.fsi
+Type member - Member 03 - Return attribute.fsi
+Type member - Member 04 - Tuple.fsi
+Type member - Member 05 - Tuple.fsi
+Type member - XmlDoc 01.fsi
+Type member - XmlDoc 02 - With attributes.fsi
+Type member - XmlDoc 03 - Constructor.fsi
+Type repr - Augmentation 01.fsi
+Type repr - Augmentation 02 - Attributes and XmlDoc.fsi
+Type repr - Augmentation 03 - Type constraints.fsi
+Type repr - None.fsi
+Type repr - Record - XmlDoc 01.fsi
+Type repr - Record 01.fsi
+Type repr - Record 02 - Mutable field.fsi
+Type repr - Record 03 - Field attributes.fsi
+Val - Active pattern 01.fsi
+Val - Function - Tuple param - Paren 01.fsi
+Val - Function - Tuple param - Paren 02 - Named.fsi
+Val - Function - Tuple param - Struct 01.fsi
+Val - Function - Tuple param - Struct 02 - Named.fsi
+Val - Function 01.fsi
+Val - Function 02 - Named param.fsi
+Val - Function 03 - Multiple named params.fsi
+Val - Function 04 - Named tuple param.fsi
+Val - Function 05 - Active pattern.fsi
+Val - Value 01.fsi
+Val - Value 02 - Return attrs.fsi
+Val - Value 03 - Type func.fsi
+Val - Value 04 - Literal.fsi
+Val - XmlDoc 01.fsi
+Val - XmlDoc 02 - With attributes.fsi

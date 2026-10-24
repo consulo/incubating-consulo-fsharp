@@ -1,0 +1,4 @@
+IDENT (1,0)
+STRING (2,4)
+INT32 (3,4)
+EOF (4,0)

@@ -1,0 +1,4 @@
+INT32 (1,0)
+PLUS_MINUS_OP (1,2)
+INT32 (1,4)
+EOF (2,0)

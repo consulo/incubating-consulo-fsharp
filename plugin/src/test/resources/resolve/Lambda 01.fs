@@ -1,0 +1,1 @@
+let g = fun <target>x y -> <caret>x

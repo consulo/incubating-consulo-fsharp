@@ -1,0 +1,5 @@
+RAW_INTERPOLATED_STRING ('$$""""""')
+WHITE_SPACE (' ')
+BAD_SYMBOLIC_OP ('$$')
+WHITE_SPACE (' ')
+STRING ('""')

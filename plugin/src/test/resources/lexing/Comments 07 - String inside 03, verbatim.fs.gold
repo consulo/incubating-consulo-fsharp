@@ -1,0 +1,2 @@
+﻿0000: BLOCK_COMMENT '(*\n  @"qwerty"\n\n  @"foo\\nbar"\n *)'
+0033: NEW_LINE '\n'

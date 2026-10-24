@@ -1,0 +1,13 @@
+﻿Language: PsiLanguageType:F#
+IFSharpImplFile
+  IAnonModuleDeclaration
+    IExpressionStatement
+      IChameleonExpression
+        IQuoteExpr
+          FSharpTokenType+LquoteUntypedTokenElement(type:LQUOTE_UNTYPED, text:<@@)
+          Whitespace(type:WHITE_SPACE, text: ) spaces:" "
+          ILiteralExpr
+            FSharpToken(type:INT32, text:1)
+          Whitespace(type:WHITE_SPACE, text: ) spaces:" "
+          FSharpTokenType+RquoteUntypedTokenElement(type:RQUOTE_UNTYPED, text:@@>)
+

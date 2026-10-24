@@ -1,0 +1,4 @@
+LPAREN (1,0)
+INT32 (1,1)
+RPAREN (1,4)
+EOF (2,0)

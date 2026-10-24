@@ -1,0 +1,4 @@
+IDENTIFIER ('typeof')
+LESS ('<')
+IDENTIFIER ('int')
+LINE_COMMENT ('//>')
